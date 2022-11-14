@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "851f8333-daf3-469b-b84a-0846c5bf7b44",
+		"name": "TrabajoPractico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24257695"
+	},
+	"item": [
+		{
+			"name": "Listado Empleados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/empleados/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"empleados",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Creas Nuevo Recibo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Legajo\":\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/recibo/nuevo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"recibo",
+						"nuevo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Empleado Nuevo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fechaNacimiento\": \"2000-06-28\",\r\n        \"fechaIngreso\": \"2022-08-26\",\r\n        \"nombre\": \"Angela\",\r\n        \"apellido\": \"Garcia\",\r\n        \"area\": \"Compras\",\r\n        \"sueldoBruto\": 30000.0,\r\n        \"legajo\": 1050\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/empleado/nuevo/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"empleado",
+						"nuevo",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Empleado",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/empleado/eliminar/1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"empleado",
+						"eliminar",
+						"1000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recibos por Empleado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/empleados/recibos/1200",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empleados",
+						"recibos",
+						"1200"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista Empleado por Area(Ventas)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/empleados/area/Ventas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empleados",
+						"area",
+						"Ventas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listado Empleados por Area(Compras)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/empleados/area/Compras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"empleados",
+						"area",
+						"Compras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer Reporte Mes y Año",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/empleados/recibos/MesYAnio/2022/05",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"empleados",
+						"recibos",
+						"MesYAnio",
+						"2022",
+						"05"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
