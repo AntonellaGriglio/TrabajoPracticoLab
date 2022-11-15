@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import TrabajoPractico.TP.Models.Empleado;
 import TrabajoPractico.TP.Models.Recibo;
+import TrabajoPractico.TP.dtos.EmpleadoDTO;
 import TrabajoPractico.TP.dtos.Recibo2DTO;
 import TrabajoPractico.TP.dtos.ReciboReporteDTO;
 import exception.exceptionRep;
@@ -30,8 +31,8 @@ public class EmpleadoRepositoryJPA implements EmpleadoRepository{
     }
 
     @Override
-    public List<Empleado> traerEmpleados() throws exceptionRep {
-        return em.createQuery("SELECT * FROM tp_lab.empleado;", Empleado.class).getResultList();
+    public List<EmpleadoDTO> traerEmpleados() throws exceptionRep {
+        return em.createQuery("SELECT *,DATEDIFF(NOW(),Fecha_Ingreso) DiasAntiguedad, year(now())-year(Fecha_Ingreso) Antiguedad FROM tp_lab.empleado ;", EmpleadoDTO.class).getResultList();
     }
 
 
@@ -52,9 +53,9 @@ public class EmpleadoRepositoryJPA implements EmpleadoRepository{
     }
 
     @Override
-    public List<Empleado> traerEmpleadosXArea(String Area) throws exceptionRep {
+    public List<EmpleadoDTO> traerEmpleadosXArea(String Area) throws exceptionRep {
 
-      return em.createQuery("SELECT * FROM tp_lab.empleado WHERE Area = ;" + Area, Empleado.class).getResultList();
+      return em.createQuery("SELECT *,DATEDIFF(NOW(),Fecha_Ingreso) DiasAntiguedad, year(now())-year(Fecha_Ingreso) Antiguedad FROM tp_lab.empleado  WHERE Area = ;" + Area, EmpleadoDTO.class).getResultList();
 
     }
 

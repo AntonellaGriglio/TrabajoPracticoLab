@@ -10,11 +10,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public class ReciboDTO {
-    private int Mes;
-    private int Anio;
-    private double MontoAntiguedad;
-    private double Jubilacion;
-    private double ObraSocial;
-    private double FondoComplejidad;
-    private int Legajo;   
+    private int mes;
+    private int anio;
+    private double montoAntiguedad;
+    private double jubilacion;
+    private double obraSocial;
+    private double fondoComplejidad;
+    private int legajo;   
 }

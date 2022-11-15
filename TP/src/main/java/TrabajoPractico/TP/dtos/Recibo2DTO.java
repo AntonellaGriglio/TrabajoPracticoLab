@@ -10,13 +10,13 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Recibo2DTO {
-    private int NumeroRecibo;
-    private int Mes;
-    private int Anio;
-    private double MontoAntiguedad;
-    private double Jubilacion;
-    private double ObraSocial;
-    private double FondoComplejidad;
-    private int Legajo;   
-    private double SueldoNeto;
+    private int numeroRecibo;
+    private int mes;
+    private int anio;
+    private double montoAntiguedad;
+    private double jubilacion;
+    private double obraSocial;
+    private double fondoComplejidad;
+    private int legajo;   
+    private double sueldoNeto;
 }

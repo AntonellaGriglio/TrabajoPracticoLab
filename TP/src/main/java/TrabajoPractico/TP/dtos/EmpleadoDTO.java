@@ -18,5 +18,7 @@ public class EmpleadoDTO {
     private Date fechaNacimiento;
     private Date fechaIngreso;
     private String area;
+    private int diasAntiguedad;
+    private int antiguedad;
     private double sueldoBruto;
 }

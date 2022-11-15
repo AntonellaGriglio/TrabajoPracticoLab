@@ -54,12 +54,12 @@ public class EmpleadoController {
     @GetMapping("/empleados/area/{area}")
     public ResponseEntity<?> getById(@PathVariable String area) {
         if (area == "") {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Id producto no puede ser 0");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Debe Ingresar un area");
         }
         try {
             return ResponseEntity.ok(repository.traerEmpleadosXArea(area));
         } catch (exceptionRep e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error de datos!");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error de datos al traer empleados por area");
         }
     }
 
@@ -80,18 +80,18 @@ public class EmpleadoController {
     @DeleteMapping("api/empleado/eliminar/{Legajo}")
     public ResponseEntity<?> delete(@PathVariable int Legajo) {
         if (Legajo == 0) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Id producto no puede ser 0");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El Legajo no puede ser 0");
         }
         try {
             return ResponseEntity.ok(repository.borrarEmpleado(Legajo));
         } catch (exceptionRep e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error de datos!");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error de datos al eliminar el empleado!");
         }
     }
     @GetMapping("/empleados/recibos/{Legajo}")
     public ResponseEntity<?> getById(@PathVariable int Legajo) {
         if (Legajo == 0) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Id producto no puede ser 0");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Debe poner un Legajo");
         }
         try {
             return ResponseEntity.ok(repository.traerRecibos(Legajo));
@@ -103,7 +103,7 @@ public class EmpleadoController {
     @GetMapping("api/empleados/recibos/MesYAnio/{Anio}/{Mes}")
     public ResponseEntity<?> getById(@PathVariable int Anio, @PathVariable int Mes) {
         if (Anio == 0 && Mes == 0) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Id producto no puede ser 0");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Debe poner un año y mes");
         }
         try {
             return ResponseEntity.ok(repository.traerRecibosMesAnio(Anio,Mes));
